@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_green"
+    android:theme="@android:style/Theme.Black.NoTitleBar"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        android:paddingTop="550dp">
+
+
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="220dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_style"
+            android:fontFamily="@font/montserratregular"
+            android:text="sign up"
+            android:textAllCaps="false"
+            android:textColor="@color/main_green"
+            android:textSize="22dp"
+            android:onClick="onClickSignIn"/>
+
+        <Button
+            android:id="@+id/logInButton"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/trans"
+            android:fontFamily="@font/montserratregular"
+            android:alpha="0.6"
+            android:stateListAnimator="@null"
+            android:text="log in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:onClick="onClickLogIn"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
