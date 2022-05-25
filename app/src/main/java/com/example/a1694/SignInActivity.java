@@ -81,7 +81,7 @@ public class SignInActivity extends AppCompatActivity {
     StorageReference mStorageRef;
     Uri uploadUri;
     EditText name, hometown, dialect;
-    User mUser;
+    static User mUser;
 ProgressBar progressBar;
 
     @Override
@@ -241,7 +241,7 @@ ProgressBar progressBar;
                         }
                     }
                 });
-        mUser = new User(mNickname, "-1", "-1", "-1", "-1", user.getUid().toString());
+        mUser = new User(mNickname, "-1", "-1", "-1", "-1", "-1", "-1", user.getUid().toString());
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id);
         ref.setValue(mUser);
@@ -309,16 +309,20 @@ ProgressBar progressBar;
         mHometown = hometown.getText().toString();
         mDialect = dialect.getText().toString();
 
-        if (mName != "" && mName != null)
-            FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id).child("name").setValue(mName);
+        if (mName != "" && mName != null) {
+            mUser.name = mName;
+            FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id).child("name").setValue(mName);}
 
-        if (mHometown != "" && mHometown != null)
-            FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id).child("hometown").setValue(mHometown);
+        if (mHometown != "" && mHometown != null) {
+            mUser.hometown = mHometown;
+            FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id).child("hometown").setValue(mHometown);}
 
-        if (mDialect != "" && mDialect != null)
-            FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id).child("dialect").setValue(mDialect);
+        if (mDialect != "" && mDialect != null) {
+            mUser.dialect = mDialect;
+            FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id).child("dialect").setValue(mDialect);}
 
         FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id).child("photoUrl").setValue(uploadUri.toString());
+        mUser.photoUrl=uploadUri.toString();
         Log.d("AUTOR", "Я все сохранил!");
         startActivity(new Intent(SignInActivity.this, MapsActivity.class));
     }
@@ -327,6 +331,25 @@ ProgressBar progressBar;
     public void loginUser() {
         startActivity(new Intent(SignInActivity.this, MapsActivity.class));
 
+    }
+
+    public void onClickReturn(View v) {
+        switch (v.getId()) {
+            case R.id.return1:
+                startActivity(new Intent(SignInActivity.this, MainActivity.class));
+            case R.id.return2:
+                signin2.setVisibility(View.INVISIBLE);
+                signin1.setVisibility(View.VISIBLE);
+            case R.id.return3:
+                signin3.setVisibility(View.INVISIBLE);
+                signin1.setVisibility(View.VISIBLE);
+            case R.id.return4:
+                signin4.setVisibility(View.INVISIBLE);
+                signin3.setVisibility(View.VISIBLE);
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users").child(mUser.id);
+                ref.removeValue();
+
+        }
     }
 }
 

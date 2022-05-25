@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LogInActivity"
+            android:name=".ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -30,12 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
           <ImageView
+              android:onClick="onClickReturn"
+              android:id="@+id/return1"
               android:layout_width="35dp"
               android:layout_height="35dp"
               android:gravity="left"
               android:layout_marginHorizontal="20dp"
-              android:background="@drawable/frame"
-              android:onClick="onClickBack"/>
+              android:background="@drawable/frame"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -117,12 +118,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:onClick="onClickReturn"
+                    android:id="@+id/return2"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:gravity="left"
                     android:layout_marginHorizontal="20dp"
                     android:background="@drawable/frame"/>
-                android:onClick="onClickBack"
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -200,6 +203,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:onClick="onClickReturn"
+                    android:id="@+id/return3"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:gravity="left"
@@ -284,6 +289,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:onClick="onClickReturn"
+                    android:id="@+id/return4"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:gravity="left"

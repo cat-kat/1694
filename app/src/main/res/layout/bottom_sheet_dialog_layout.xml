@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/big_view"
+    android:visibility="visible">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="@color/white"
@@ -176,3 +186,103 @@
 
 
 </LinearLayout>
+</FrameLayout>
+
+<FrameLayout
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:id="@+id/small_view"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <!-- Rectangle 18 -->
+
+    <View
+        android:layout_width="37dp"
+        android:layout_height="3dp"
+        android:background="@drawable/line_small"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/name_small"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Название"
+        android:fontFamily="@font/montserratsemibold"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/main_green"
+        android:layout_marginVertical="3dp"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/label_small"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="14dp"
+        android:textColor="@color/main600"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_vertical"
+        android:text="Метка"/>
+
+
+
+
+    <TextView
+        android:id="@+id/address_small"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="14dp"
+        android:textColor="@color/main600"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_vertical"
+        android:text="Здесь будет длинный адрес, а в конце метро почти обязательно написано метро"/>
+
+
+    <TextView
+        android:id="@+id/time_small"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="14dp"
+        android:textColor="@color/main600"
+        android:paddingHorizontal="20dp"
+        android:gravity="center_vertical"
+        android:text="Everyday 11:00-19:00"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <Button
+            android:layout_width="263dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"
+            android:fontFamily="@font/montserratregular"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button_style_bottom"
+            android:textColor="@color/main600"
+            android:text="Open place chat"
+            android:layout_margin="15dp" />
+
+
+        <Button
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:background="@drawable/route_but"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</LinearLayout>
+</FrameLayout></FrameLayout>

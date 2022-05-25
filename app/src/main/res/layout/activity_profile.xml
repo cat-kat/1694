@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:layout_gravity="left"
+        tools:ignore="MissingConstraints" >
+
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="236dp"
+            tools:ignore="MissingConstraints"
+            android:background="@color/black"/>
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="40dp"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratmedium"
+                android:paddingRight="140dp"
+                android:text="Sign out"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="@font/montserratmedium"
+                android:paddingLeft="140dp"
+                android:text="Edit"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/montserratsemibold"
+            android:text="Ya Ya Ya"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="bottom"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="5dp"
+            android:text="username"
+            android:textColor="@color/main_green"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:fontFamily="@font/montserratmedium"
+            android:gravity="top"
+            android:paddingHorizontal="20dp"
+            android:text="my username"
+            android:textColor="@color/main600"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line_big" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="bottom"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="5dp"
+            android:text="hometown"
+            android:textColor="@color/main_green"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/hometown"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/montserratmedium"
+            android:gravity="top"
+            android:paddingHorizontal="20dp"
+            android:text="my username"
+            android:textColor="@color/main600"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line_big" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="bottom"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="5dp"
+            android:text="dialect"
+            android:textColor="@color/main_green"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/dialect"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:fontFamily="@font/montserratmedium"
+            android:gravity="top"
+            android:paddingHorizontal="20dp"
+            android:text="my username"
+            android:textColor="@color/main600"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line_big" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="bottom"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="5dp"
+            android:text="age"
+            android:textColor="@color/main_green"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:fontFamily="@font/montserratmedium"
+            android:gravity="top"
+            android:paddingHorizontal="20dp"
+            android:text="my username"
+            android:textColor="@color/main600"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line_big" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="bottom"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="5dp"
+            android:text="description"
+            android:textColor="@color/main_green"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:fontFamily="@font/montserratmedium"
+            android:gravity="top"
+            android:paddingHorizontal="20dp"
+            android:text="my username"
+            android:textColor="@color/main600"
+            android:textSize="16dp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom|center"
+        android:background="@color/main_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserratlight"
+                    android:paddingHorizontal="30dp"
+                    android:text="从ap"
+
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:visibility="invisible"
+                    android:background="@drawable/line_menu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserratlight"
+                    android:paddingHorizontal="50dp"
+                    android:text="cha天s"
+                    android:textColor="@color/white"
+
+                    android:textSize="15dp" />
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/line_menu"
+
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onClickProfile"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserratlight"
+
+                    android:paddingHorizontal="30dp"
+                    android:text="户rofile"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/line_menu"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

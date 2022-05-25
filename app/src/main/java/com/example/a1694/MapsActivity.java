@@ -7,6 +7,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Address;
@@ -51,13 +52,10 @@ import java.util.Locale;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
 
-    /*
-    обозначения для метро
-    мини боттом шит диалог
-    зум движениие по карте
-    чаты нажимаются  но пустые
-    ТОЧКИ В НУЖНОМ!!!! месте
+    /* починить боттом шит диалог!!!
+    посмотреть что по поиску
      */
+
 public float tag;
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
@@ -243,40 +241,34 @@ public float tag;
                 coordinatorLayout.getParent().requestLayout();
                 bottomSheetDialog.show();
         TextView textName = (TextView) bottomSheetDialog.findViewById(R.id.name);
+        TextView textNameSmall = (TextView) bottomSheetDialog.findViewById(R.id.name_small);
+
         TextView textLabel = (TextView) bottomSheetDialog.findViewById(R.id.label);
+        TextView textLabelSmall = (TextView) bottomSheetDialog.findViewById(R.id.label_small);
+
         TextView textAddress = (TextView) bottomSheetDialog.findViewById(R.id.address);
+        TextView textAddressSmall = (TextView) bottomSheetDialog.findViewById(R.id.address_small);
+
+        TextView textTime = bottomSheetDialog.findViewById(R.id.time);
+        TextView textTimeSmall = bottomSheetDialog.findViewById(R.id.time_small);
+
         //TextView textMetro = (TextView) bottomSheetDialog.findViewById(R.id.metro);
 
         ImageView image = (ImageView) bottomSheetDialog.findViewById(R.id.imagePlace);
-        TextView textTime = bottomSheetDialog.findViewById(R.id.time);
         TextView textSite = bottomSheetDialog.findViewById(R.id.site);
-bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-    @Override
-    public void onStateChanged(@NonNull View bottomSheet, int newState) {
-
-    }
-
-    @Override
-    public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-textName.setText("ooo");
-        if (coordinatorLayout.getHeight() < 600) {
-            textName.setText("yep");
-        }
-        if (slideOffset == 1 && tag == 2) tag = 1;
-        Log.d("BOTTOMBAG", String.valueOf(bottomSheetBehavior.getState()) + " " + String.valueOf(slideOffset) + " "+tag);
-      //  if (bottomSheetBehavior.getState() < 1000)
-        if (slideOffset < 0.4 && slideOffset > 0 && tag == 1)
-            bottomSheetDialog.dismiss();
-
-        }
-});
-
+        FrameLayout bigView = bottomSheetDialog.findViewById(R.id.big_view);
+        FrameLayout smallView = bottomSheetDialog.findViewById(R.id.small_view);
         //TextView id = (TextView) bottomSheetDialog.findViewById(R.id.id_place);
         textName.setText(place.name);
         textLabel.setText(place.label);
         textAddress.setText(place.address + "\n" + decorateMetro(place.metro));
         textTime.setText(place.time);
         textSite.setText(place.site);
+
+        textAddressSmall.setText(place.address);
+        textLabelSmall.setText(place.label);
+        textNameSmall.setText(place.name);
+        textTimeSmall.setText(place.time);
         //textMetro.setText(place.metro);
         //Picasso.get().load(place.photoUrl).into(image);
         //Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(image);
@@ -286,11 +278,35 @@ textName.setText("ooo");
         Bitmap mIcon_val = BitmapFactory.decodeStream(req.openConnection()
                 .getInputStream());
         image.setImageBitmap(mIcon_val);
+bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+    @Override
+    public void onStateChanged(@NonNull View bottomSheet, int newState) {
+
+    }
+
+    @Override
+    public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+        bigView.setVisibility(View.VISIBLE);
+        smallView.setVisibility(View.INVISIBLE);
+        textSite.setText(place.site);
+
+        if (slideOffset == 1 && tag == 2) tag = 1;
+        Log.d("BOTTOMBAG", String.valueOf(bottomSheetBehavior.getState()) + " " + String.valueOf(slideOffset) + " "+tag);
+      //  if (bottomSheetBehavior.getState() < 1000)
+        if (slideOffset < 0.4 && slideOffset > 0 && tag == 1)
+            bottomSheetDialog.dismiss();
+
+        }
+});
+
     }
 
     public String decorateMetro(String station) {
         return station;
     }
 
+ public void onClickProfile(View v) {
+     startActivity(new Intent(MapsActivity.this, ProfileActivity.class));
 
+ }
 }
